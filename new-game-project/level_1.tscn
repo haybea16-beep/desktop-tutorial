@@ -1,3 +1,62 @@
-[gd_scene format=3 uid="uid://bvooprthn5tk0"]
+[gd_scene load_steps=3 format=3 uid="uid://bvooprthn5tk0"]
 
-[node name="Level 1" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ilcil"]
+radius = 7.07107
+
+[sub_resource type="LabelSettings" id="LabelSettings_3hls8"]
+font_size = 30
+outline_size = 13
+outline_color = Color(0, 0, 0, 1)
+
+[node name="arbys game" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="main" type="Node2D" parent="CanvasLayer"]
+
+[node name="Area2Dslash" type="Area2D" parent="CanvasLayer/main" groups=["slash"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/main/Area2Dslash"]
+shape = SubResource("CircleShape2D_ilcil")
+
+[node name="Line2D" type="Line2D" parent="CanvasLayer/main"]
+
+[node name="cannons" type="Node2D" parent="CanvasLayer/main"]
+
+[node name="cannon1" type="Node2D" parent="CanvasLayer/main/cannons"]
+position = Vector2(107, 928)
+
+[node name="cannon2" type="Node2D" parent="CanvasLayer/main/cannons"]
+position = Vector2(314, 771)
+
+[node name="cannon3" type="Node2D" parent="CanvasLayer/main/cannons"]
+position = Vector2(654, 942)
+
+[node name="cannon4" type="Node2D" parent="CanvasLayer/main/cannons"]
+position = Vector2(843, 765)
+
+[node name="cannon5" type="Node2D" parent="CanvasLayer/main/cannons"]
+position = Vector2(1115, 924)
+
+[node name="cannon6" type="Node2D" parent="CanvasLayer/main/cannons"]
+position = Vector2(1303, 270)
+
+[node name="cannon7" type="Node2D" parent="CanvasLayer/main/cannons"]
+position = Vector2(-162, 305)
+
+[node name="Labeltime" type="Label" parent="CanvasLayer/main"]
+offset_left = 1.0
+offset_right = 96.0
+offset_bottom = 53.0
+text = "Time: 60"
+label_settings = SubResource("LabelSettings_3hls8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timergame length" type="Timer" parent="CanvasLayer/main"]
+wait_time = 60.0
+one_shot = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
