@@ -1,10 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcb03tc533dkp"]
+[gd_scene load_steps=3 format=3 uid="uid://dcb03tc533dkp"]
 
 [ext_resource type="Texture2D" uid="uid://ywuko6r676lq" path="res://food-pack-3/food-pack-3008.png" id="1_feoww"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_feoww"]
+size = Vector2(69, 6)
 
 [node name="burger" type="CharacterBody2D"]
 
 [node name="wholesprite" type="Node2D" parent="."]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="wholesprite"]
 texture_filter = 1
@@ -45,12 +49,13 @@ position = Vector2(177, -2)
 scale = Vector2(3, 3)
 texture = ExtResource("1_feoww")
 
-[node name="slicedrightslashed" type="Node2D" parent="."]
+[node name="slicedowned" type="Node2D" parent="."]
+visible = false
 position = Vector2(0, -4)
 
-[node name="half1" type="CharacterBody2D" parent="slicedrightslashed"]
+[node name="half1" type="CharacterBody2D" parent="slicedowned"]
 
-[node name="half1" type="ColorRect" parent="slicedrightslashed/half1"]
+[node name="half1" type="ColorRect" parent="slicedowned/half1"]
 clip_children = 1
 offset_left = -44.0
 offset_top = -155.0
@@ -58,16 +63,16 @@ offset_right = 341.0
 offset_bottom = -43.0
 rotation = 1.5708
 
-[node name="Sprite2D" type="Sprite2D" parent="slicedrightslashed/half1/half1"]
+[node name="Sprite2D" type="Sprite2D" parent="slicedowned/half1/half1"]
 texture_filter = 1
 position = Vector2(154, -47)
 rotation = -1.5708
 scale = Vector2(3, 3)
 texture = ExtResource("1_feoww")
 
-[node name="half2" type="CharacterBody2D" parent="slicedrightslashed"]
+[node name="half2" type="CharacterBody2D" parent="slicedowned"]
 
-[node name="half1" type="ColorRect" parent="slicedrightslashed/half2"]
+[node name="half1" type="ColorRect" parent="slicedowned/half2"]
 clip_children = 1
 offset_left = 113.0
 offset_top = -159.0
@@ -75,16 +80,113 @@ offset_right = 498.0
 offset_bottom = -47.0
 rotation = 1.5708
 
-[node name="Sprite2D" type="Sprite2D" parent="slicedrightslashed/half2/half1"]
+[node name="Sprite2D" type="Sprite2D" parent="slicedowned/half2/half1"]
 texture_filter = 1
 position = Vector2(158, 98)
 rotation = -1.5708
 scale = Vector2(3, 3)
 texture = ExtResource("1_feoww")
 
-[node name="Sprite2D2" type="Sprite2D" parent="slicedrightslashed/half2/half1"]
+[node name="slicedrightslash" type="Node2D" parent="."]
+visible = false
+position = Vector2(0, -4)
+
+[node name="half1" type="CharacterBody2D" parent="slicedrightslash"]
+
+[node name="half1" type="ColorRect" parent="slicedrightslash/half1"]
+clip_children = 1
+offset_left = -223.0
+offset_top = 56.0
+offset_right = 162.0
+offset_bottom = 168.0
+rotation = -0.785398
+
+[node name="Sprite2D" type="Sprite2D" parent="slicedrightslash/half1/half1"]
 texture_filter = 1
-position = Vector2(158, 98)
-rotation = -1.5708
+position = Vector2(196.576, 121.622)
+rotation = 0.785398
 scale = Vector2(3, 3)
 texture = ExtResource("1_feoww")
+
+[node name="half2" type="CharacterBody2D" parent="slicedrightslash"]
+
+[node name="half1" type="ColorRect" parent="slicedrightslash/half2"]
+clip_children = 1
+offset_left = -152.0
+offset_top = 142.0
+offset_right = 233.0
+offset_bottom = 254.0
+rotation = -0.785398
+
+[node name="Sprite2D" type="Sprite2D" parent="slicedrightslash/half2/half1"]
+texture_filter = 1
+position = Vector2(207.182, 10.6066)
+rotation = 0.785398
+scale = Vector2(3, 3)
+texture = ExtResource("1_feoww")
+
+[node name="slicedleftslash" type="Node2D" parent="."]
+position = Vector2(0, -4)
+
+[node name="half1" type="CharacterBody2D" parent="slicedleftslash"]
+
+[node name="half1" type="ColorRect" parent="slicedleftslash/half1"]
+clip_children = 1
+offset_left = -137.0
+offset_top = -129.0
+offset_right = 248.0
+offset_bottom = -17.0
+rotation = 0.785398
+
+[node name="Sprite2D" type="Sprite2D" parent="slicedleftslash/half1/half1"]
+texture_filter = 1
+position = Vector2(190.919, -7.07112)
+rotation = -0.785398
+scale = Vector2(3, 3)
+texture = ExtResource("1_feoww")
+
+[node name="half2" type="CharacterBody2D" parent="slicedleftslash"]
+
+[node name="half1" type="ColorRect" parent="slicedleftslash/half2"]
+clip_children = 1
+offset_left = -58.0
+offset_top = -208.0
+offset_right = 327.0
+offset_bottom = -96.0
+rotation = 0.785398
+
+[node name="Sprite2D" type="Sprite2D" parent="slicedleftslash/half2/half1"]
+texture_filter = 1
+position = Vector2(190.919, 104.652)
+rotation = -0.785398
+scale = Vector2(3, 3)
+texture = ExtResource("1_feoww")
+
+[node name="Area2Dside" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2Dside"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_feoww")
+
+[node name="Area2Dmiddle" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2Dmiddle"]
+position = Vector2(0.5, 0)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_feoww")
+
+[node name="Area2Drights" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2Drights"]
+position = Vector2(0.5, 0)
+rotation = -0.785398
+shape = SubResource("RectangleShape2D_feoww")
+
+[node name="Area2Dlefts" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2Dlefts"]
+position = Vector2(0.5, 0)
+rotation = 0.785398
+shape = SubResource("RectangleShape2D_feoww")
+
+[node name="Timer" type="Timer" parent="."]
