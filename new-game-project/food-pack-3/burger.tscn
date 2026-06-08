@@ -1,14 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcb03tc533dkp"]
+[gd_scene load_steps=5 format=3 uid="uid://dcb03tc533dkp"]
 
 [ext_resource type="Texture2D" uid="uid://ywuko6r676lq" path="res://food-pack-3/food-pack-3008.png" id="1_feoww"]
+[ext_resource type="Script" uid="uid://fe48gmimpdsw" path="res://food-pack-3/slop.gd" id="1_k4rnc"]
+[ext_resource type="Script" uid="uid://db5gby3pmb2ql" path="res://food-pack-3/half.gd" id="2_u0d0p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_feoww"]
 size = Vector2(69, 6)
 
 [node name="burger" type="CharacterBody2D"]
+script = ExtResource("1_k4rnc")
 
 [node name="wholesprite" type="Node2D" parent="."]
-visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="wholesprite"]
 texture_filter = 1
@@ -20,6 +22,7 @@ texture = ExtResource("1_feoww")
 visible = false
 
 [node name="half1" type="CharacterBody2D" parent="sliceright"]
+script = ExtResource("2_u0d0p")
 
 [node name="half1" type="ColorRect" parent="sliceright/half1"]
 clip_children = 1
@@ -35,6 +38,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("1_feoww")
 
 [node name="half2" type="CharacterBody2D" parent="sliceright"]
+script = ExtResource("2_u0d0p")
 
 [node name="half2" type="ColorRect" parent="sliceright/half2"]
 clip_children = 1
@@ -54,6 +58,7 @@ visible = false
 position = Vector2(0, -4)
 
 [node name="half1" type="CharacterBody2D" parent="slicedowned"]
+script = ExtResource("2_u0d0p")
 
 [node name="half1" type="ColorRect" parent="slicedowned/half1"]
 clip_children = 1
@@ -71,6 +76,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("1_feoww")
 
 [node name="half2" type="CharacterBody2D" parent="slicedowned"]
+script = ExtResource("2_u0d0p")
 
 [node name="half1" type="ColorRect" parent="slicedowned/half2"]
 clip_children = 1
@@ -92,6 +98,7 @@ visible = false
 position = Vector2(0, -4)
 
 [node name="half1" type="CharacterBody2D" parent="slicedrightslash"]
+script = ExtResource("2_u0d0p")
 
 [node name="half1" type="ColorRect" parent="slicedrightslash/half1"]
 clip_children = 1
@@ -109,6 +116,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("1_feoww")
 
 [node name="half2" type="CharacterBody2D" parent="slicedrightslash"]
+script = ExtResource("2_u0d0p")
 
 [node name="half1" type="ColorRect" parent="slicedrightslash/half2"]
 clip_children = 1
@@ -126,9 +134,11 @@ scale = Vector2(3, 3)
 texture = ExtResource("1_feoww")
 
 [node name="slicedleftslash" type="Node2D" parent="."]
+visible = false
 position = Vector2(0, -4)
 
 [node name="half1" type="CharacterBody2D" parent="slicedleftslash"]
+script = ExtResource("2_u0d0p")
 
 [node name="half1" type="ColorRect" parent="slicedleftslash/half1"]
 clip_children = 1
@@ -146,6 +156,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("1_feoww")
 
 [node name="half2" type="CharacterBody2D" parent="slicedleftslash"]
+script = ExtResource("2_u0d0p")
 
 [node name="half1" type="ColorRect" parent="slicedleftslash/half2"]
 clip_children = 1
@@ -190,3 +201,10 @@ rotation = 0.785398
 shape = SubResource("RectangleShape2D_feoww")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="area_entered" from="Area2Dside" to="." method="_on_area_2_dside_area_entered"]
+[connection signal="area_entered" from="Area2Dmiddle" to="." method="_on_area_2_dmiddle_area_entered"]
+[connection signal="area_entered" from="Area2Drights" to="." method="_on_area_2_drights_area_entered"]
+[connection signal="area_entered" from="Area2Dlefts" to="." method="_on_area_2_dlefts_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
