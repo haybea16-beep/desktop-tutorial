@@ -15,7 +15,13 @@ func _process(delta):
 	
 
 func _on_area_2_dside_area_entered(area: Area2D) -> void:
-	pass # Replace with function body.
+	if area.is_in_group("slash") and hit == false:
+		hit = true
+		$wholesprite.visible = false
+		$sliceright.visible = true
+		$sliceright/half1.gravity = 100.0
+		$sliceright/half2.gravity = 100.0
+		var fruit_speed = 1000
 
 
 func _on_area_2_dmiddle_area_entered(area: Area2D) -> void:
