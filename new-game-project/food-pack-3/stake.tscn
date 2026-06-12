@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://r468i18wbyi7"]
+
+[ext_resource type="PackedScene" uid="uid://dcb03tc533dkp" path="res://food-pack-3/burger.tscn" id="1_cfrjt"]
+[ext_resource type="Texture2D" uid="uid://bnu77kavfa7t6" path="res://food-pack-3/food-pack-3001.png" id="2_qknp4"]
+
+[node name="stake" instance=ExtResource("1_cfrjt")]
+
+[node name="Sprite2D" parent="wholesprite" index="0"]
+texture = ExtResource("2_qknp4")
+
+[node name="Sprite2D" parent="sliceright/half1/half1" index="0"]
+texture = ExtResource("2_qknp4")
+
+[node name="Sprite2D" parent="sliceright/half2/half2" index="0"]
+texture = ExtResource("2_qknp4")
+
+[node name="Sprite2D" parent="slicedowned/half1/half1" index="0"]
+texture = ExtResource("2_qknp4")
+
+[node name="Sprite2D" parent="slicedowned/half2/half1" index="0"]
+texture = ExtResource("2_qknp4")
+
+[node name="Sprite2D" parent="slicedrightslash/half1/half1" index="0"]
+texture = ExtResource("2_qknp4")
+
+[node name="Sprite2D" parent="slicedrightslash/half2/half1" index="0"]
+texture = ExtResource("2_qknp4")
+
+[node name="Sprite2D" parent="slicedleftslash/half1/half1" index="0"]
+texture = ExtResource("2_qknp4")
+
+[node name="Sprite2D" parent="slicedleftslash/half2/half1" index="0"]
+texture = ExtResource("2_qknp4")

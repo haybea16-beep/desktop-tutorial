@@ -8,6 +8,7 @@
 size = Vector2(69, 6)
 
 [node name="burger" type="CharacterBody2D"]
+position = Vector2(11, 0)
 script = ExtResource("1_k4rnc")
 
 [node name="wholesprite" type="Node2D" parent="."]
