@@ -7,3 +7,4 @@ func _ready():
 	$wholesprite/AnimationPlayer.play("RESET")
 	
 func 
+ d
