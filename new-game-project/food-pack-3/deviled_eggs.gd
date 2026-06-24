@@ -6,5 +6,13 @@ var gravity = 300.0
 func _ready():
 	$wholesprite/AnimationPlayer.play("RESET")
 	
-func 
- d
+func _process(delta):
+	rotation_degrees += 120 * delta
+
+func _physics_process(delta):
+	if not is_on_floor():
+		velocity.y += gravity * delta
+	move_and_slide()
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is
