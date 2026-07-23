@@ -7,13 +7,13 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(delta: float):
 	pass
 
 
-func _on_start_pressed() -> void:
-	print("Start game presed")
+func _on_start_pressed():
+	get_tree().change_scene_to_file("res://level_1.tscn")
 
 
-func _on_quit_pressed() -> void:
-	print("quit game presed")
+func _on_quit_pressed():
+	get_tree().quit()
