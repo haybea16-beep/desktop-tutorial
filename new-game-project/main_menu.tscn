@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://dylffiifkypn5"]
+
+[ext_resource type="Script" uid="uid://benrefbln561x" path="res://main_menu.gd" id="1_06t4h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 12.0
+offset_top = 13.0
+offset_right = 106.0
+offset_bottom = 53.0
+script = ExtResource("1_06t4h")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.648
+anchor_right = 1.276
+anchor_bottom = 1.0
+offset_left = 229.0
+offset_top = 222.92
+offset_right = 754.056
+offset_bottom = 391.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
+text = "start game"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
+text = "Quit game"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 336.0
+offset_top = 48.0
+offset_right = 804.0
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "food slice"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_quit_pressed"]

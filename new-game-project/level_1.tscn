@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvooprthn5tk0"]
+[gd_scene load_steps=11 format=3 uid="uid://bvooprthn5tk0"]
 
 [ext_resource type="Script" uid="uid://d13hcraa860qy" path="res://kenney_pixel-platformer-food-expansion/cannons.gd" id="1_3hls8"]
+[ext_resource type="Script" uid="uid://8gxo74pkltlp" path="res://main.gd" id="1_hbghi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ilcil"]
 radius = 7.07107
@@ -92,17 +93,26 @@ _data = {
 &"idle": SubResource("Animation_3hls8")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbghi"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
 [node name="arbys game" type="Node2D"]
 position = Vector2(4, 0)
 
 [node name="ingameui" type="CanvasLayer" parent="."]
 
 [node name="main" type="Node2D" parent="."]
+script = ExtResource("1_hbghi")
 
 [node name="Area2Dslash" type="Area2D" parent="main" groups=["slash"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="main/Area2Dslash"]
 shape = SubResource("CircleShape2D_ilcil")
+disabled = true
 
 [node name="Line2D" type="Line2D" parent="main"]
 
@@ -131,6 +141,8 @@ position = Vector2(1303, 270)
 position = Vector2(-162, 305)
 
 [node name="Timer" type="Timer" parent="main/cannons"]
+wait_time = 0.5
+autostart = true
 
 [node name="flash" type="ColorRect" parent="main"]
 visible = false
@@ -164,8 +176,56 @@ libraries = {
 &"": SubResource("AnimationLibrary_ihfcg")
 }
 
-[node name="start screen" type="CanvasLayer" parent="."]
+[node name="main_menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 12.0
+offset_top = 13.0
+offset_right = 106.0
+offset_bottom = 53.0
 
-[node name="game over screen" type="CanvasLayer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="main_menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.648
+anchor_right = 1.276
+anchor_bottom = 1.0
+offset_left = 229.0
+offset_top = 222.92
+offset_right = 754.056
+offset_bottom = 391.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="main_menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_hbghi")
+text = "start game"
+
+[node name="Button2" type="Button" parent="main_menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_hbghi")
+text = "Quit game"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 336.0
+offset_top = 48.0
+offset_right = 804.0
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "food slice"
 
 [connection signal="timeout" from="main/cannons/Timer" to="main/cannons" method="_on_timer_timeout"]

@@ -17,4 +17,48 @@ func _on_timer_timeout() -> void:
 	
 	if delived_eggs_chance <= 2:
 		food_instance = deviled_eggs.instantiate()
+	else:
+		var food = randi_range(1,5)
+		if food == 1:
+			food_instance = burger.instantiate()
+		elif food == 2:
+			food_instance = stake.instantiate()
+		elif food == 3:
+			food_instance = ribs.instantiate()
+		elif food == 4:
+			food_instance = drumb_stick.instantiate()
+		elif food == 5:
+			food_instance = big_drumb_stick.instantiate()
+	
+	add_sibling(food_instance)
+	var food_speed = 600
+	if ran == 1:
+		food_instance.global_position = $cannon1.global_position
+		food_instance.velocity = Vector2.UP.rotated(food_instance.global_position + deg_to_rad(20)) * food_speed
+	elif ran == 2:
+		food_instance.global_position = $cannon2.global_position
+		food_instance.velocity = Vector2.UP.rotated(food_instance.global_position) * food_speed
+	elif ran == 3:
+		food_instance.global_position = $cannon3.global_position
+		food_instance.velocity = Vector2.UP.rotated(food_instance.global_position) * food_speed
+	elif ran == 4:
+		food_instance.global_position = $cannon4.global_position
+		food_instance.velocity = Vector2.UP.rotated(food_instance.global_position) * food_speed
+	elif ran == 5:
+		food_instance.global_position = $cannon5.global_position
+		food_instance.velocity = Vector2.UP.rotated(food_instance.global_position + deg_to_rad(-20)) * food_speed
+	elif ran == 6:
+		food_instance.global_position = $cannon6.global_position
+		food_instance.velocity = Vector2.UP.rotated(food_instance.global_position + deg_to_rad(-80)) * food_speed
+	elif ran == 7:
+		food_instance.global_position = $cannon7.global_position
+		food_instance.velocity = Vector2.UP.rotated(food_instance.global_position + deg_to_rad(80)) * food_speed
+	
+	
+	
+	
+	
+	
+	
+	
 	
