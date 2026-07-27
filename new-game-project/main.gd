@@ -48,3 +48,8 @@ func _process(delta):
 	$Area2Dslash/CollisionShape2D.disabled = true
 	
 	last_mouse_pos = current_mouse_pos
+
+
+func _on_button_play_pressed():
+	$"start screen/main_menu".visible = false
+	game_is_on = true
