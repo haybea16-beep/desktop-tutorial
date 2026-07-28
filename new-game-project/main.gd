@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var mouse_trail_line: Light2D = $Line2D
+@onready var mouse_trail_line: Line2D = $Line2D
 
 var max_trail_points = 5
 var point_distance_threshold = 2.0
@@ -48,8 +48,18 @@ func _process(delta):
 	$Area2Dslash/CollisionShape2D.disabled = true
 	
 	last_mouse_pos = current_mouse_pos
+		
+
+func _on_button_pressed() -> void:
+	$"start screen".visible = false
+	game_is_on  = true
+	$"Timergame length".start()
+
+func _on_button_2_pressed() -> void:
+	get_tree().reload_current_scene()
 
 
-func _on_button_play_pressed():
-	$"start screen/main_menu".visible = false
-	game_is_on = true
+func _on_timergame_length_timeout() -> void:
+	game_is_on = false
+	$"game over screen".visible = true
+	

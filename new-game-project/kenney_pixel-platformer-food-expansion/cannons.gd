@@ -34,25 +34,25 @@ func _on_timer_timeout() -> void:
 	var food_speed = 600
 	if ran == 1:
 		food_instance.global_position = $cannon1.global_position
-		food_instance.velocity = Vector2.UP.rotated(food_instance.global_position + deg_to_rad(20)) * food_speed
+		food_instance.velocity = Vector2.UP.rotated(food_instance.global_rotation + deg_to_rad(20)) * food_speed
 	elif ran == 2:
 		food_instance.global_position = $cannon2.global_position
-		food_instance.velocity = Vector2.UP.rotated(food_instance.global_position) * food_speed
+		food_instance.velocity = Vector2.UP.rotated(food_instance.global_rotation) * food_speed
 	elif ran == 3:
 		food_instance.global_position = $cannon3.global_position
-		food_instance.velocity = Vector2.UP.rotated(food_instance.global_position) * food_speed
+		food_instance.velocity = Vector2.UP.rotated(food_instance.global_rotation) * food_speed
 	elif ran == 4:
 		food_instance.global_position = $cannon4.global_position
-		food_instance.velocity = Vector2.UP.rotated(food_instance.global_position) * food_speed
+		food_instance.velocity = Vector2.UP.rotated(food_instance.global_rotation) * food_speed
 	elif ran == 5:
 		food_instance.global_position = $cannon5.global_position
-		food_instance.velocity = Vector2.UP.rotated(food_instance.global_position + deg_to_rad(-20)) * food_speed
+		food_instance.velocity = Vector2.UP.rotated(food_instance.global_rotation + deg_to_rad(-20)) * food_speed
 	elif ran == 6:
 		food_instance.global_position = $cannon6.global_position
-		food_instance.velocity = Vector2.UP.rotated(food_instance.global_position + deg_to_rad(-80)) * food_speed
+		food_instance.velocity = Vector2.UP.rotated(food_instance.global_rotation + deg_to_rad(-80)) * food_speed
 	elif ran == 7:
 		food_instance.global_position = $cannon7.global_position
-		food_instance.velocity = Vector2.UP.rotated(food_instance.global_position + deg_to_rad(80)) * food_speed
+		food_instance.velocity = Vector2.UP.rotated(food_instance.global_rotation + deg_to_rad(80)) * food_speed
 	
 	
 	
