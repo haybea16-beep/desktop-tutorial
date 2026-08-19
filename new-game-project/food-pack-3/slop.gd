@@ -14,7 +14,7 @@ func _process(delta):
 	rotation_degrees += rotation_speed * delta
 	
 
-func _on_area_2_dside_area_entered(area: Area2D) -> void:
+func _on_area_2_dside_area_entered(area: Area2D):
 	if area.is_in_group("slash") and hit == false:
 		hit = true
 		$wholesprite.visible = false
@@ -28,7 +28,7 @@ func _on_area_2_dside_area_entered(area: Area2D) -> void:
 		rotation_speed = 0
 		$"..".score += 1
 
-func _on_area_2_dmiddle_area_entered(area: Area2D) -> void:
+func _on_area_2_dmiddle_area_entered(area: Area2D):
 	if area.is_in_group("slash") and hit == false:
 		hit = true
 		$wholesprite.visible = false
@@ -43,7 +43,7 @@ func _on_area_2_dmiddle_area_entered(area: Area2D) -> void:
 		$"..".score += 1
 
 
-func _on_area_2_drights_area_entered(area: Area2D) -> void:
+func _on_area_2_drights_area_entered(area: Area2D):
 	if area.is_in_group("slash") and hit == false:
 		hit = true
 		$wholesprite.visible = false
@@ -52,13 +52,13 @@ func _on_area_2_drights_area_entered(area: Area2D) -> void:
 		$slicedrightslash/half2.gravity = 100.0
 		var fruit_speed = 1000
 		$slicedrightslash/half1.velocity = Vector2.UP.rotated($slicedrightslash/half1.global_rotation + deg_to_rad(-45)) * fruit_speed
-		$slicedrightslash/half2.velocity = Vector2.DOWN	.rotated($slicedrightslash/half2.global_rotation + deg_to_rad(-45)) * fruit_speed
+		$slicedrightslash/half2.velocity = Vector2.DOWN.rotated($slicedrightslash/half2.global_rotation + deg_to_rad(-45)) * fruit_speed
 		$Timer.start()
 		rotation_speed = 0
 		$"..".score += 1
 
 
-func _on_area_2_dlefts_area_entered(area: Area2D) -> void:
+func _on_area_2_dlefts_area_entered(area: Area2D):
 	if area.is_in_group("slash") and hit == false:
 		hit = true
 		$wholesprite.visible = false
@@ -73,5 +73,5 @@ func _on_area_2_dlefts_area_entered(area: Area2D) -> void:
 		$"..".score += 1
 
 
-func _on_timer_timeout() -> void:
+func _on_timer_timeout():
 	queue_free()

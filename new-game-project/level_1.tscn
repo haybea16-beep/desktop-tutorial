@@ -105,16 +105,16 @@ position = Vector2(4, 0)
 
 [node name="ingameui" type="CanvasLayer" parent="."]
 
-[node name="Button2" type="Button" parent="ingameui"]
-offset_left = 245.0
-offset_top = 329.0
-offset_right = 890.0
-offset_bottom = 444.0
+[node name="Button2" type="Button" parent="."]
+offset_left = 1480.0
+offset_top = 5.0
+offset_right = 1702.0
+offset_bottom = 82.0
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_hbghi")
-text = "Quit game"
+text = "restart game"
 
 [node name="main" type="Node2D" parent="."]
 script = ExtResource("1_hbghi")
@@ -131,22 +131,22 @@ disabled = true
 script = ExtResource("1_3hls8")
 
 [node name="cannon1" type="Node2D" parent="main/cannons"]
-position = Vector2(107, 928)
+position = Vector2(7, 1188)
 
 [node name="cannon2" type="Node2D" parent="main/cannons"]
-position = Vector2(314, 771)
+position = Vector2(283, 1031)
 
 [node name="cannon3" type="Node2D" parent="main/cannons"]
-position = Vector2(654, 942)
+position = Vector2(730, 1199)
 
 [node name="cannon4" type="Node2D" parent="main/cannons"]
-position = Vector2(843, 765)
+position = Vector2(1132, 1031)
 
 [node name="cannon5" type="Node2D" parent="main/cannons"]
-position = Vector2(1115, 924)
+position = Vector2(1479, 1218)
 
 [node name="cannon6" type="Node2D" parent="main/cannons"]
-position = Vector2(1303, 270)
+position = Vector2(1773, 270)
 
 [node name="cannon7" type="Node2D" parent="main/cannons"]
 position = Vector2(-162, 305)
@@ -195,14 +195,30 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -236.0
-offset_top = -276.0
-offset_right = 232.0
-offset_bottom = -139.0
+offset_left = -208.0
+offset_top = -309.0
+offset_right = 260.0
+offset_bottom = -172.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 100
 text = "food slice"
+
+[node name="Label2" type="Label" parent="main/start screen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.0
+offset_top = -186.0
+offset_right = 404.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "make sure you are on full screen"
 
 [node name="main_menu" type="Control" parent="main/start screen"]
 layout_mode = 3
@@ -218,10 +234,10 @@ anchors_preset = -1
 anchor_top = -0.648
 anchor_right = 1.276
 anchor_bottom = 1.0
-offset_left = 229.0
-offset_top = 222.92
-offset_right = 754.056
-offset_bottom = 391.0
+offset_left = 447.0
+offset_top = 351.92
+offset_right = 1139.06
+offset_bottom = 503.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -235,7 +251,7 @@ text = "start game"
 
 [node name="game over screen" type="CanvasLayer" parent="main"]
 
-[connection signal="pressed" from="ingameui/Button2" to="main" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button2" to="main" method="_on_button_2_pressed"]
 [connection signal="timeout" from="main/cannons/Timer" to="main/cannons" method="_on_timer_timeout"]
 [connection signal="timeout" from="main/Timergame length" to="main" method="_on_timergame_length_timeout"]
 [connection signal="pressed" from="main/start screen/main_menu/VBoxContainer/Button" to="main" method="_on_button_pressed"]

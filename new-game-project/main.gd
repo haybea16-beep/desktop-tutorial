@@ -5,7 +5,7 @@ extends Node2D
 var max_trail_points = 5
 var point_distance_threshold = 2.0
 var mouse_still_timer = 0.0
-var mouse_still_timeout = 0.2
+var mouse_still_timeout = 0.25
 var last_mouse_pos: Vector2 = Vector2.INF
 
 var game_is_on = false
@@ -28,7 +28,7 @@ func _process(delta):
 		if last_mouse_pos != Vector2.INF and current_mouse_pos.distance_to(last_mouse_pos) > 0.1:
 			mouse_still_timer = 0.0
 		else:
-			mouse_still_timeout += delta
+			mouse_still_timer += delta
 			
 		if mouse_trail_line.get_point_count() == 0 or \
 		   mouse_trail_line.get_point_position(mouse_trail_line.get_point_count() - 1).distance_to(current_mouse_pos) > point_distance_threshold:
@@ -43,9 +43,8 @@ func _process(delta):
 			last_mouse_pos = Vector2.INF
 	else:
 		mouse_trail_line.clear_points()
-		mouse_trail_line.clear_points()
+		mouse_still_timer = 0.0
 		last_mouse_pos = Vector2.INF
-	$Area2Dslash/CollisionShape2D.disabled = true
 	
 	last_mouse_pos = current_mouse_pos
 		
