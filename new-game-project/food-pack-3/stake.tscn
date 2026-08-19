@@ -6,6 +6,7 @@
 [node name="stake" instance=ExtResource("1_cfrjt")]
 
 [node name="Sprite2D" parent="wholesprite" index="0"]
+position = Vector2(9, 8)
 texture = ExtResource("2_qknp4")
 
 [node name="Sprite2D" parent="sliceright/half1/half1" index="0"]

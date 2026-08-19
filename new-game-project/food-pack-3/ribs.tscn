@@ -7,6 +7,7 @@
 position = Vector2(-2, 0)
 
 [node name="Sprite2D" parent="wholesprite" index="0"]
+position = Vector2(-2.84217e-13, -4)
 texture = ExtResource("2_1qsuf")
 
 [node name="Sprite2D" parent="sliceright/half1/half1" index="0"]

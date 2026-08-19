@@ -6,6 +6,8 @@
 [node name="drum_stick" instance=ExtResource("1_tngnk")]
 
 [node name="Sprite2D" parent="wholesprite" index="0"]
+position = Vector2(2.50001, -2.35201)
+scale = Vector2(3.39063, 2.9265)
 texture = ExtResource("2_kn3bm")
 
 [node name="Sprite2D" parent="sliceright/half1/half1" index="0"]
